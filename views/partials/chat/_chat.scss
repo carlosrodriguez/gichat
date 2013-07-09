@@ -1,0 +1,13 @@
+ /*
+* File name:   _chat.scss
+* Description: Chat window styles
+* Version:     1.0
+*/
+
+$module: ".chat-window";
+
+#{$module} {
+	position: absolute;
+	bottom: 0;
+	margin-bottom: 64px;
+} 
