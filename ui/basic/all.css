@@ -1,0 +1,418 @@
+/* v0.1 - Gissues */
+/* line 2, sass/neat/grid/_grid.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ /*
+* File name:   _cssAnimations.scss
+* Description: Basic animations can be used throughout the site
+* Version:     1.0
+*/
+/*
+* Slide/Fade up animation. Can be applied using:
+*	@include animate(fadeup, '.5s');
+*/
+@-webkit-keyframes fadeup {
+  /* line 35, sass/_cssAnimations.scss */
+  0% {
+    opacity: 0;
+    position: absolute;
+    top: 80px;
+  }
+
+  /* line 40, sass/_cssAnimations.scss */
+  40% {
+    opacity: 0;
+    position: absolute;
+    top: 80px;
+  }
+
+  /* line 45, sass/_cssAnimations.scss */
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@-moz-keyframes fadeup {
+  /* line 35, sass/_cssAnimations.scss */
+  0% {
+    opacity: 0;
+    position: absolute;
+    top: 80px;
+  }
+
+  /* line 40, sass/_cssAnimations.scss */
+  40% {
+    opacity: 0;
+    position: absolute;
+    top: 80px;
+  }
+
+  /* line 45, sass/_cssAnimations.scss */
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+@keyframes fadeup {
+  /* line 35, sass/_cssAnimations.scss */
+  0% {
+    opacity: 0;
+    position: absolute;
+    top: 80px;
+  }
+
+  /* line 40, sass/_cssAnimations.scss */
+  40% {
+    opacity: 0;
+    position: absolute;
+    top: 80px;
+  }
+
+  /* line 45, sass/_cssAnimations.scss */
+  100% {
+    opacity: 1;
+    top: 0;
+  }
+}
+
+/*
+* Slide/Fade up animation. Can be applied using:
+*   @include animate(fadein, '.5s');
+*/
+@-webkit-keyframes fadein {
+  /* line 56, sass/_cssAnimations.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 59, sass/_cssAnimations.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  /* line 56, sass/_cssAnimations.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 59, sass/_cssAnimations.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  /* line 56, sass/_cssAnimations.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 59, sass/_cssAnimations.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+ /*
+* File name:   _mixins.scss
+* Description: Common mixins will be stored here
+* Version:     1.0
+*/
+/*
+* File name:   _basic.scss
+* Description: Basic styles
+* Version:     1.0
+*/
+/* line 7, _basic.scss */
+html, body {
+  height: 100%;
+}
+
+/*
+* File name:   _layout.scss
+* Description: Basic layout elements
+* Version:     1.0
+*/
+/* line 10, ../ui-class/layout/_layout.scss */
+.ui-layout-wrapper {
+  display: block;
+  border: 1px solid;
+  min-height: 100%;
+  height: 100%;
+}
+/* line 22, sass/_mixins.scss */
+.ui-layout-wrapper:before, .ui-layout-wrapper:after {
+  display: table;
+  content: " ";
+}
+/* line 23, sass/_mixins.scss */
+.ui-layout-wrapper:after {
+  clear: both;
+}
+/* line 24, sass/_mixins.scss */
+.lt-ie8 .ui-layout-wrapper {
+  zoom: 1;
+}
+/* line 16, ../ui-class/layout/_layout.scss */
+.ui-layout-wrapper .content-container {
+  margin-top: 40px;
+}
+/* line 21, ../ui-class/layout/_layout.scss */
+.ui-layout-wrapper .content-container .ui-layout-sidebar {
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  background: #ccc;
+  min-height: 100%;
+  height: 100%;
+}
+/* line 41, sass/neat/grid/_span-columns.scss */
+.ui-layout-wrapper .content-container .ui-layout-sidebar:last-child {
+  margin-right: 0;
+}
+/* line 28, ../ui-class/layout/_layout.scss */
+.ui-layout-wrapper .content-container .ui-layout-main-content {
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+  margin-right: 0;
+}
+/* line 41, sass/neat/grid/_span-columns.scss */
+.ui-layout-wrapper .content-container .ui-layout-main-content:last-child {
+  margin-right: 0;
+}
+
+/* line 35, ../ui-class/layout/_layout.scss */
+.ui-layout-footer {
+  background: #ccc;
+  position: relative;
+  margin-top: -64px;
+  /* negative value of footer height */
+  height: 64px;
+  clear: both;
+}
+
+ /*
+* File name:   _text.scss
+* Description: Basic font treatments and text alignments
+* Version:     1.0
+*/
+/*
+*	Variables for all text related items
+*/
+/*
+*	Text mixins, defaults applied, but allows for calling in to different tags
+*/
+/*
+*	Setting defaults from mixins
+*/
+/* line 93, ../ui-class/text/_text.scss */
+h1 {
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #999999;
+}
+
+/* line 94, ../ui-class/text/_text.scss */
+h2 {
+  font-size: 18px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #252525;
+}
+
+/* line 95, ../ui-class/text/_text.scss */
+h3 {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  color: #252525;
+}
+
+/* line 96, ../ui-class/text/_text.scss */
+h4 {
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  color: #252525;
+}
+
+/* line 97, ../ui-class/text/_text.scss */
+h5 {
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  color: #252525;
+}
+
+/* line 104, ../ui-class/text/_text.scss */
+body,
+p,
+div,
+ul,
+li,
+dd {
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  line-height: 17px;
+  color: #4d5c67;
+}
+
+/* line 108, ../ui-class/text/_text.scss */
+a {
+  color: #0081e9;
+}
+/* line 112, ../ui-class/text/_text.scss */
+a:hover, a:active {
+  color: #252525;
+}
+
+/* line 117, ../ui-class/text/_text.scss */
+sup {
+  font-size: 60%;
+}
+
+/*
+*	Additional UI font classes for generic items (can be used by the CMS)
+*/
+/* line 130, ../ui-class/text/_text.scss */
+.ui-text-center {
+  text-align: center;
+}
+
+/* line 133, ../ui-class/text/_text.scss */
+.ui-text-focus {
+  font-size: 22px;
+}
+
+/* line 138, ../ui-class/text/_text.scss */
+.ui-text-uppercase {
+  text-transform: uppercase;
+}
+
+/* line 141, ../ui-class/text/_text.scss */
+.ui-text-italic {
+  font-style: italic;
+}
+
+/* line 146, ../ui-class/text/_text.scss */
+.ui-text-semibold {
+  font-weight: 600;
+}
+
+/* line 151, ../ui-class/text/_text.scss */
+.ui-text-bold {
+  font-weight: 700;
+}
+
+ /*
+* File name:   _header.scss
+* Description: Header styles
+* Version:     1.0
+*/
+/* line 9, ../../views/partials/header/_header.scss */
+.header {
+  display: block;
+  background: -webkit-linear-gradient(bottom, #222222 0.24%, #111111 100%);
+  background: linear-gradient(to top, #222222 0.24%, #111111 100%);
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  margin-bottom: 0;
+}
+/* line 22, sass/_mixins.scss */
+.header:before, .header:after {
+  display: table;
+  content: " ";
+}
+/* line 23, sass/_mixins.scss */
+.header:after {
+  clear: both;
+}
+/* line 24, sass/_mixins.scss */
+.lt-ie8 .header {
+  zoom: 1;
+}
+/* line 18, ../../views/partials/header/_header.scss */
+.header .inner {
+  padding: 0 20px;
+}
+/* line 22, ../../views/partials/header/_header.scss */
+.header .inner .logo {
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  display: block;
+  float: left;
+  padding: 10px 20px 10px;
+  margin: 0;
+  padding: 12px 0;
+  font-size: 20px;
+  font-weight: 200;
+}
+/* line 41, sass/neat/grid/_span-columns.scss */
+.header .inner .logo:last-child {
+  margin-right: 0;
+}
+/* line 32, ../../views/partials/header/_header.scss */
+.header .inner .logo a {
+  color: #fff;
+}
+/* line 35, ../../views/partials/header/_header.scss */
+.header .inner .logo a:hover {
+  color: #fff;
+}
+/* line 41, ../../views/partials/header/_header.scss */
+.header .inner .account {
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+  text-align: right;
+}
+/* line 41, sass/neat/grid/_span-columns.scss */
+.header .inner .account:last-child {
+  margin-right: 0;
+}
+/* line 45, ../../views/partials/header/_header.scss */
+.header .inner .account li {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 10, sass/_mixins.scss */
+.lt-ie8 .header .inner .account li {
+  text-indent: 0 !important;
+  display: inline;
+  zoom: 1;
+}
+
+ /*
+* File name:   _sidebar.scss
+* Description: Sidebar styles
+* Version:     1.0
+*/
+/* line 9, ../../views/partials/sidebar/_sidebar.scss */
+.sidebar {
+  display: table-row;
+  height: 100%;
+  width: 100%;
+}
+/* line 14, ../../views/partials/sidebar/_sidebar.scss */
+.sidebar .sidebar-content {
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+}

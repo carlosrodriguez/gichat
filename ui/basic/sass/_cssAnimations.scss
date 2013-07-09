@@ -1,0 +1,62 @@
+ /*
+* File name:   _cssAnimations.scss
+* Description: Basic animations can be used throughout the site
+* Version:     1.0
+*/
+
+
+@mixin transitions {
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} { @content; }
+    @-moz-keyframes #{$name} { @content; }
+    @keyframes #{$name} { @content; }
+}
+
+@mixin animate($name, $time) {
+    animation: #{$name} #{$time};
+    -moz-animation: #{$name} #{$time}; /* Firefox */
+    -webkit-animation: #{$name} #{$time}; /* Safari and Chrome */
+    -o-animation: #{$name} #{$time}; /* Opera */
+}
+
+
+
+/*
+* Slide/Fade up animation. Can be applied using:
+*	@include animate(fadeup, '.5s');
+*/
+@include keyframes(fadeup) {
+    0% {
+        opacity: 0;
+        position: absolute;
+        top: 80px;
+    }
+    40% {
+        opacity: 0;
+        position: absolute;
+        top: 80px;
+    }
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+/*
+* Slide/Fade up animation. Can be applied using:
+*   @include animate(fadein, '.5s');
+*/
+@include keyframes(fadein) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
