@@ -6,9 +6,34 @@
 # Model
 MessageModel = Backbone.Model.extend(urlRoot: '/messages')
 
+SailsCollection = Backbone.Collection.extend(
+    sailsCollection: ""
+    socket: null
+    sync: (method, model, options) ->
+        where = {}
+        where = where: options.where  if options.where
+        if typeof @sailsCollection is "string" and @sailsCollection isnt ""
+            @socket = io.connect()
+            @socket.on "connect", _.bind(->
+                @socket.request "/" + @sailsCollection, where, _.bind((users) ->
+                    @set users
+                , this)
+                @socket.on "message", _.bind((msg) ->
+                    m = msg.uri.split("/").pop()
+                    if m is "create"
+                        @add msg.data
+                    else if m is "update"
+                        @get(msg.data.id).set msg.data
+                    else @remove @get(msg.data.id)  if m is "destroy"
+                , this)
+            , this)
+        else
+            console.log "Error: Cannot retrieve models because property 'sailsCollection' not set on the collection"
+)
+
 # Collection
-MessageCollection = Backbone.Collection.extend
-    url: '/messages'
+MessageCollection = SailsCollection.extend
+    sailsCollection: 'messages'
     model: MessageModel
 
 messages = new MessageCollection
