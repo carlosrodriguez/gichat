@@ -3,14 +3,6 @@ module.exports.routes =
 		controller: "chat"
 		action: "index"
 
-	"/signup":
-		controller: "main"
-		action: "signup"
-
-	"/login":
-		controller: "main"
-		action: "login"
-
-	"/chat":
+	"/room/:id":
 		controller: "chat"
 		action: "index"

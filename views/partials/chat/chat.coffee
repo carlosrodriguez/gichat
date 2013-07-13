@@ -12,7 +12,6 @@ class Chat
 		el.on 'submit', @sendMessage
 
 	sendMessage: (evt) ->
-		console.log 'Create message'
 		evt.preventDefault()
 
 		messageText = $('#message').val()

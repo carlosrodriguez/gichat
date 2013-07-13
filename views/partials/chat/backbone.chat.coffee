@@ -4,14 +4,15 @@
 # Version:     1.0
 
 # Model
-MessageModel = Backbone.Model.extend(urlRoot: '/messages')
+MessageModel = Backbone.Model.extend
+    urlRoot: '/messages'
 
-SailsCollection = Backbone.Collection.extend(
+SailsCollection = Backbone.Collection.extend
     sailsCollection: ""
     socket: null
     sync: (method, model, options) ->
         where = {}
-        where = where: options.where  if options.where
+        where = where: options.where if options.where
         if typeof @sailsCollection is "string" and @sailsCollection isnt ""
             @socket = io.connect()
             @socket.on "connect", _.bind(->
@@ -29,7 +30,6 @@ SailsCollection = Backbone.Collection.extend(
             , this)
         else
             console.log "Error: Cannot retrieve models because property 'sailsCollection' not set on the collection"
-)
 
 # Collection
 MessageCollection = SailsCollection.extend
@@ -38,6 +38,7 @@ MessageCollection = SailsCollection.extend
 
 messages = new MessageCollection
 messages.fetch()
+
 
 # View
 _.templateSettings = interpolate: /\{\{(.+?)\}\}/g
