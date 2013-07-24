@@ -1,0 +1,25 @@
+ /*
+* File name:   _mixins.scss
+* Description: Common mixins will be stored here
+* Version:     1.0
+*/
+
+@mixin inline-block($aligment: middle) {
+     display: inline-block;
+     vertical-align: $aligment;
+     .lt-ie8 & { 
+           text-indent:0!important; display: inline; zoom: 1; 
+     }
+}
+
+@mixin placeholder {
+	&.placeholder { @content }
+	&:-moz-placeholder { @content }
+	&::-webkit-input-placeholder { @content }
+}
+
+@mixin clearfix() {
+     &:before, &:after { display:table; content:" "; }
+     &:after { clear:both; }
+     .lt-ie8 & { zoom:1; }
+}

@@ -1,0 +1,50 @@
+ /*
+* File name:   _header.scss
+* Description: Header styles
+* Version:     1.0
+*/
+
+$module: ".header";
+
+#{$module} {
+	@include row();
+	@include background(linear-gradient(bottom, #222 0.24%,  #111 100%));
+	position: fixed;
+	right: 0;
+	left: 0;
+	z-index: 1030;
+	margin-bottom: 0;
+
+	.inner {
+
+		padding: 0 20px;
+
+		.logo {
+			@include span-columns(3);
+			display: block;
+			float: left;
+			padding: 10px 20px 10px;
+			margin: 0;
+			padding: 12px 0;
+			font-size: 20px;
+			font-weight: 200; 
+
+			a {
+				color: #fff;
+
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+
+		.account {
+			@include span-columns(9);
+			text-align: right;
+
+			li {
+				@include inline-block();
+			}
+		}
+	}
+}

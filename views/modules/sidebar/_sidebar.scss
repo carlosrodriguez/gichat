@@ -1,0 +1,19 @@
+ /*
+* File name:   _sidebar.scss
+* Description: Sidebar styles
+* Version:     1.0
+*/
+
+$module: ".sidebar";
+
+#{$module} {
+	display: table-row;
+	height: 100%;
+	width: 100%;
+
+	#{$module}-content {
+		display: table-cell;
+		height: 100%;
+		width: 100%;
+	}
+} 

@@ -1,0 +1,32 @@
+{
+  "name": "gitchatv3",
+  "private": true,
+  "version": "0.0.0",
+  "description": "a Sails application",
+  "dependencies": {
+    "sails": "0.9.3",
+    "grunt": "0.4.1",
+    "sails-disk": "~0.9.0",
+    "ejs": "0.8.4",
+    "optimist": "0.3.4"
+  },
+  "devDependencies": {
+    "grunt": "0.4.0",
+    "grunt-cli": "0.1.7",
+    "grunt-lib-contrib": "0.6.1",
+    "grunt-contrib-jshint": "0.3.0",
+    "grunt-contrib-qunit": "0.2.0",
+    "grunt-contrib-watch": "0.3.1",
+    "grunt-contrib-compass": "~0.3.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-coffee": "~0.7.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "debug": "node debug app.js"
+  },
+  "main": "app.js",
+  "repository": "",
+  "author": "",
+  "license": ""
+}

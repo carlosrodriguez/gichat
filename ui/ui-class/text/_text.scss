@@ -1,0 +1,155 @@
+ /*
+* File name:   _text.scss
+* Description: Basic font treatments and text alignments
+* Version:     1.0
+*/
+
+
+/*
+*	Variables for all text related items
+*/
+
+$font-primary: 'Open Sans', sans-serif;
+
+$color-content: #000;
+$color-prime: #999999;
+$color-second: #252525;
+$color-general: #4d5c67;
+$color-link: #0081e9;
+$color-cta: #fff;
+$color-contrast: #f7cf15;
+$color-accent: #c62a2f;
+
+$font-size-h1: 20px;
+$font-size-h2: 18px;
+$font-size-h3: 16px;
+$font-size-h4: 14px;
+$font-size-h5: 12px;
+$font-size-general: 12px;
+$font-size-focus: 22px;
+$font-size-description: 16px;
+$font-size-cta: 15px;
+
+
+/*
+*	Text mixins, defaults applied, but allows for calling in to different tags
+*/
+
+@mixin h1() {
+	font: {
+		size: $font-size-h1;
+		family: $font-primary;
+		weight: 400;
+	}
+	color: $color-prime;
+}
+@mixin h2() {
+	font: {
+		size: $font-size-h2;
+		family: $font-primary;
+		weight: 400;
+	}
+	color: $color-second;
+}
+@mixin h3() {
+	font: {
+		size: $font-size-h3;
+		family: $font-primary;
+		weight: 400;
+	}
+	color: $color-second;
+}
+@mixin h4() {
+	font: {
+		size: $font-size-h4;
+		family: $font-primary;
+		weight: 600;
+	}
+	color: $color-second;
+}
+@mixin h5() {
+	font: {
+		size: $font-size-h5;
+		family: $font-primary;
+		weight: 800;
+	}
+	color: $color-second;
+}
+
+@mixin generalText() {
+	font: {
+		size: $font-size-general;
+		family: $font-primary;
+	}
+	line-height: 17px;
+	color: $color-general;
+}
+
+
+/*
+*	Setting defaults from mixins
+*/
+
+h1 { @include h1(); }
+h2 { @include h2(); }
+h3 { @include h3(); }
+h4 { @include h4(); }
+h5 { @include h5(); }
+
+body, 
+p,
+div,
+ul,
+li,
+dd {
+	@include generalText;
+}
+
+a {
+	color: $color-link;
+
+	&:hover,
+	&:active {
+		color: $color-second;
+	}
+}
+
+sup {
+	font: {
+		size: 60%;
+	}
+}
+
+
+/*
+*	Additional UI font classes for generic items (can be used by the CMS)
+*/
+
+$prefix: ".ui-text-";	// Prefix for classes eg. ui-text-blue
+
+#{$prefix}center {
+	text-align: center;
+}
+#{$prefix}focus {
+	font: {
+		size: $font-size-focus;
+	}
+}
+#{$prefix}uppercase {
+	text-transform: uppercase;
+}
+#{$prefix}italic {
+	font: {
+		style: italic;
+	}
+}
+#{$prefix}semibold {
+	font: {
+		weight: 600;
+	}
+}
+#{$prefix}bold {
+	font: {
+		weight: 700;
+	}
+}

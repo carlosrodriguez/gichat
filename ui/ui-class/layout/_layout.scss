@@ -1,0 +1,41 @@
+/*
+* File name:   _layout.scss
+* Description: Basic layout elements
+* Version:     1.0
+*/
+
+
+$prefix: ".ui-layout-";	// Prefix for classes eg. ui-layout-wrapper
+
+#{$prefix}wrapper {
+	@include row();
+	border: 1px solid;
+	min-height: 100%;
+	height: 100%;
+
+	.content-container {
+		margin-top: 40px;
+		// min-height: 100%;
+		// height: 100%;
+
+		#{$prefix}sidebar {
+			@include span-columns(3);
+			background: #ccc;
+			min-height: 100%;
+			height: 100%;
+		}
+
+		#{$prefix}main-content {
+			@include span-columns(9);
+			@include omega()
+		}
+	}
+}
+
+#{$prefix}footer {
+	background: #ccc;
+	position: relative;
+	margin-top: -64px; /* negative value of footer height */
+	height: 64px;
+	clear:both;
+}
