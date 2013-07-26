@@ -1,16 +1,16 @@
 module.exports.routes =
-	"/":
-		controller: "chat"
-		action: "index"
+	'/':
+		controller: 'chat'
+		action: 'index'
 
-	"/room/:id":
-		controller: "chat"
-		action: "index"
+	'/room/:id':
+		controller: 'chat'
+		action: 'index'
 
-	"post /messages":
-		controller: "messages"
-		action: "create"
+	'/login':
+		controller: 'auth'
+		action: 'index'
 
-	"/messages":
-		controller: "messages"
-		action: "index"
+	'/logout':
+		controller: 'auth'
+		action: 'logout'

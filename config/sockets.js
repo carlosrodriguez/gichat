@@ -22,7 +22,7 @@ module.exports.sockets = {
 
   // The data store where socket.io will store its message queue 
   // and answer pubsub logic
-  adapter: 'memory',
+  // adapter: 'memory',
 
 
 
@@ -51,6 +51,13 @@ module.exports.sockets = {
   // port: 6379,
   // db: 'sails',
   // pass: '<redis auth password>'
+
+  adapter: 'mongo',
+  
+  host: 'localhost',
+  port: 27017,
+  db: 'sails',
+  collection: 'sessions',
 
 
 

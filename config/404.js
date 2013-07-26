@@ -7,6 +7,8 @@
  * http://expressjs.com/faq.html#404-handling
  */
 
+require('coffee-script') // Temp fix for Coffee script support
+
 module.exports[404] = function pageNotFound(req, res, express404Handler) {
 
   var statusCode = 404;
