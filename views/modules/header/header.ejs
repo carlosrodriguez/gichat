@@ -4,12 +4,12 @@
 			<a href="/" id="logo">Github Chat Room</a>
 		</h1>
 		<div class="account">
-			{{#if currentUser}}
+			<%if (typeof(user) != 'undefined'){ %>
 			<ul>
-				<li class="user">{{currentUser.profile.name}}</li>
-				<li><a href="#" id="logout_trigger">Logout</a></li>
+				<li class="user"><%= user.name %></li>
+				<li><a href="/logout">Logout</a></li>
 			</ul>
-			{{/if}}
+			<% } %>
 		</div>
 	</div>
 </div>

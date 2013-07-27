@@ -28,7 +28,10 @@ AuthController =
 
 	callback: (req, res) ->
 		_res = res
+		_req = req
 		passport.authenticate('github', (req, res) ->
+			console.log 'callback'
+			_req.session.passport.user = res[0] # Seems odd that req is undefined and res is sending the github object.
 			_res.redirect '/'
 		) req, res
 
