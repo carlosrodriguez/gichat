@@ -7,13 +7,12 @@ verifyHandler = (token, tokenSecret, profile, done) ->
 		Users.find
 			uid: profile.id
 		, (err, user) ->
-			console.log 'test user'
-			console.log user
 			if user.length
 				console.log 'failed it think there is a user'
+				# req.session.passport.user = user
+				console.log done
 				done null, user
 			else
-				console.log 'create user'
 				Users.create(
 					provider: profile.provider
 					uid: profile.id
@@ -21,7 +20,7 @@ verifyHandler = (token, tokenSecret, profile, done) ->
 				).done (err, user) ->
 					if err
 						throw err
-					req.session.passport.user = user
+					# req.session.passport.user = user
 					done null, user
 
 
@@ -35,8 +34,6 @@ passport.deserializeUser (uid, done) ->
 		uid: uid
 	, (err, user) ->
 		done err, user
-
-
 
 module.exports =
   
